@@ -28,4 +28,9 @@ node server.js
 cd client
 cp .env.example .env
 npm install
-npm run dev 
+npm run dev
+
+
+Outpu: 
+<img width="502" height="924" alt="image" src="https://github.com/user-attachments/assets/fbe4ab3e-5756-4215-a030-4ab470356bdb" />
+ 
