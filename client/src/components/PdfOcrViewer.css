@@ -1,0 +1,226 @@
+/* pdf-ocr-container and overall layout */
+.pdf-ocr-container {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #ffffff; /* White background for a paper-like feel */
+  color: #000000; /* Black text for readability */
+  max-width: 8.5in; /* A4/Letter size width */
+  margin: 20px auto;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #c0c0c0;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 1em;
+  font-style: italic;
+  color: #333333;
+  margin: 0;
+}
+
+/* Upload & Test Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border: 1px dashed #999999;
+  border-radius: 8px;
+}
+
+.upload-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.file-input {
+  border: 1px solid #999999;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.upload-btn, .test-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.upload-btn {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.upload-btn:hover:enabled {
+  background-color: #000000;
+}
+
+.test-btn {
+  background-color: #e0e0e0;
+  color: #333333;
+  border: 1px solid #999999;
+}
+
+.test-btn:hover:enabled {
+  background-color: #cccccc;
+}
+
+.upload-btn:disabled, .test-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-left-color: #000000;
+  animation: spin 1s ease infinite;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #cc0000;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.placeholder-text {
+  text-align: center;
+  font-style: italic;
+  color: #666666;
+  padding: 50px 0;
+  border: 1px dashed #999999;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Extracted Content Section (The core of the question paper look) */
+/* ... (existing styles above) ... */
+
+/* Extracted Content Section */
+.content-section {
+  background-color: #fcfcfc;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.content-section h2 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 5px;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.question-item {
+  padding-left: 20px;
+  position: relative;
+}
+
+.question-text {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.question-image-container {
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.question-image {
+  max-width: 90%;
+  height: auto;
+}
+
+/* --- This is the key change for flexible options --- */
+.options-list {
+  padding-left: 0;
+  margin-top: 10px;
+  display: flex; /* Use flexbox for flexible wrapping */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 10px; /* Space between the option items */
+}
+
+.option-item {
+  padding: 5px 10px;
+  font-size: 1em;
+  color: #000000;
+  /* Ensure the item can shrink and grow, but not be smaller than its content */
+  flex: 1 1 33%; /* flex-grow, flex-shrink, flex-basis */
+  min-width: 150px; /* Optional: Sets a minimum width for readability on smaller screens */
+}
+/* --- End of key change --- */
+
+.hint-text {
+  font-style: italic;
+  color: #666666;
+  margin-top: 10px;
+  font-size: 0.9em;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding-top: 5px;
+}
+
+/* Reset counter */
+.questions-list {
+  counter-reset: question-counter;
+}
+
+.hint-text {
+  font-style: italic;
+  color: #666666;
+  margin-top: 10px;
+  font-size: 0.9em;
+  border-top: 1px solid #cccccc;
+  padding-top: 5px;
+}
+
+/* Reset counter */
+.questions-list {
+  counter-reset: question-counter;
+}
+
+.opt-diagram-container{
+  display: flex;
+  justify-content: space-between;
+}
